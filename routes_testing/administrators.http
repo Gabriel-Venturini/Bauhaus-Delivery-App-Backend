@@ -1,0 +1,29 @@
+# Variáveis para reutilização.
+@host = http://localhost:3000
+@api_path = administrators
+
+###
+# CRIAR um novo Administrador (POST)
+POST {{host}}/{{api_path}}
+Content-Type: application/json
+
+{
+  "profile": {
+    "name": "Gabriel Venturini",
+    "email": "gabriel@admin.com",
+    "phone": "11987654321"
+  },
+  "role": "super_admin",
+  "permissions": {
+    "canDeleteUsers": true,
+    "canManageBilling": true
+  }
+}
+
+###
+# LISTAR todos os Administradores (GET)
+GET {{host}}/{{api_path}}
+
+###
+# BUSCAR um Administrador específico pelo ID (GET)
+GET {{host}}/{{api_path}}/1
